@@ -35,6 +35,8 @@ public class LoginPageStepDefinition {
         tcs.driver.get("https://rahulshettyacademy.com/loginpagePractise/");
         tcs.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
+        System.out.println(" Pushing to branch ");
+
     }
 
     @When("User login to website using {string} and {string}")
