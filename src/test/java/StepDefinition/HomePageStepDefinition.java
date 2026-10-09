@@ -27,6 +27,8 @@ public class HomePageStepDefinition {
         WebElement img = tcs.driver.findElement(By.xpath("//a[text()='iphone X']"));
         Thread.sleep(5000);
         Assert.assertTrue(img.isDisplayed());
+
+        tcs.driver.quit();
     }
 
 }

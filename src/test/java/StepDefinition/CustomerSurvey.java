@@ -8,7 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import pageObjects.FormPageObjects;
 import utils.TestContectSetup;
@@ -28,7 +31,9 @@ public class CustomerSurvey {
 
     @Given("User in on the home page")
     public void user_in_on_the_home_page() {
-        tcs.driver = new FirefoxDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        tcs.driver = new ChromeDriver(options);
         tcs.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         tcs.driver.manage().window().maximize();
         tcs.driver.get("https://form.jotform.com/240741451699463");
